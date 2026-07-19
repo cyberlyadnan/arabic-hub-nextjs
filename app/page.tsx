@@ -17,20 +17,24 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-[#0F766E]/10 via-[#FAFAF8] to-[#C9A227]/10">
+      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
         
+        {/* Next/Image Background */}
+        <Image
+          src="/images/hero-bg.png"
+          alt="Islamic Geometric Background"
+          fill
+          priority
+          className="object-cover object-center pointer-events-none -z-20"
+        />
+        
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-background/75 backdrop-blur-[2px] -z-10" />
+
         {/* Large Decorative Calligraphy Watermark */}
-        <div className="absolute -right-20 top-20 opacity-[0.03] text-[400px] font-arabic leading-none pointer-events-none select-none text-primary transform -rotate-12">
+        <div className="absolute -right-20 top-20 opacity-[0.05] text-[400px] font-arabic leading-none pointer-events-none select-none text-primary transform -rotate-12 -z-10">
           اقرأ
         </div>
-
-        {/* Abstract Islamic Geometric Pattern Background - CSS based */}
-        <div className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-multiply" 
-             style={{ 
-               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%230F766E' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-               backgroundSize: '40px 40px'
-             }} 
-        />
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
