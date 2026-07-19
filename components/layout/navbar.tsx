@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
+import { GOOGLE_FORM_URL, WHATSAPP_URL } from "@/lib/constants";
 
 const links = [
   { name: "Home", href: "/" },
@@ -56,7 +57,6 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
           {links.map((link) => {
             const isActive = pathname === link.href;
@@ -77,22 +77,34 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <Button variant="outline" className="rounded-full border-primary/20 text-primary hover:bg-primary/5">
-            WhatsApp
+          <Button
+            variant="outline"
+            className="rounded-full border-primary/20 text-primary hover:bg-primary/5"
+            asChild
+          >
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
           </Button>
-          <Button className="rounded-full bg-primary hover:bg-secondary text-primary-foreground shadow-md shadow-primary/20">
-            Register Now
+          <Button
+            className="rounded-full bg-primary hover:bg-secondary text-primary-foreground shadow-md shadow-primary/20"
+            asChild
+          >
+            <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+              Register Now
+            </a>
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
         <div className="lg:hidden">
           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-foreground">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
+            <SheetTrigger
+              render={
+                <Button variant="ghost" size="icon" className="text-foreground" />
+              }
+            >
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Toggle Menu</span>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col border-l-0 shadow-2xl p-6 sm:p-8">
               <div className="flex flex-col gap-6 mt-12">
@@ -108,11 +120,22 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="flex flex-col gap-3 mt-6">
-                  <Button variant="outline" className="w-full rounded-full border-primary/20 text-primary hover:bg-primary/5">
-                    WhatsApp
+                  <Button
+                    variant="outline"
+                    className="w-full rounded-full border-primary/20 text-primary hover:bg-primary/5"
+                    asChild
+                  >
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                      WhatsApp
+                    </a>
                   </Button>
-                  <Button className="w-full rounded-full bg-primary hover:bg-secondary text-primary-foreground shadow-md shadow-primary/20">
-                    Register Now
+                  <Button
+                    className="w-full rounded-full bg-primary hover:bg-secondary text-primary-foreground shadow-md shadow-primary/20"
+                    asChild
+                  >
+                    <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                      Register Now
+                    </a>
                   </Button>
                 </div>
               </div>

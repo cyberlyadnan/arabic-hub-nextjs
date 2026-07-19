@@ -61,7 +61,7 @@ export default function FAQPage() {
       <Section>
         <div className="max-w-3xl mx-auto">
           <AnimatedContainer delay={0.2} direction="up">
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-border/50 py-2">
                   <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors">
