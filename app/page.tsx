@@ -8,7 +8,6 @@ import { QuranVerse } from "@/components/home/quran-verse";
 import { CoursesHighlight } from "@/components/home/courses-highlight";
 import { SuccessStats } from "@/components/home/success-stats";
 import { Testimonials } from "@/components/home/testimonials";
-import { Comparison } from "@/components/home/comparison";
 import { MeetTeacher } from "@/components/home/meet-teacher";
 import { FaqPreview } from "@/components/home/faq-preview";
 import { CtaSection } from "@/components/home/cta-section";
@@ -34,7 +33,6 @@ export default function Home() {
       <CoursesHighlight />
       <SuccessStats />
       <Testimonials />
-      <Comparison />
       <MeetTeacher />
       <FaqPreview />
       <CtaSection />
