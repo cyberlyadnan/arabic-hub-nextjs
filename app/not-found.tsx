@@ -1,20 +1,27 @@
+import Link from "next/link";
 import { AnimatedContainer } from "@/components/shared/animated-container";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { PageHero } from "@/components/shared/page-hero";
 
 export default function NotFound() {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center min-h-[70vh] px-4">
-      <AnimatedContainer className="text-center">
-        <h1 className="font-heading text-8xl md:text-9xl font-bold text-primary/20 mb-4">404</h1>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">Page Not Found</h2>
-        <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
-        </p>
-        <Button className="rounded-full px-8" asChild>
-          <Link href="/">Return Home</Link>
-        </Button>
-      </AnimatedContainer>
-    </div>
+    <>
+      <PageHero
+        title="Page Not Found"
+        description="The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+        eyebrow="404 Error"
+        icon="home"
+        arabicText="؟"
+        breadcrumbs={[{ label: "404" }]}
+      />
+      <div className="flex flex-col items-center justify-center bg-gradient-to-b from-background to-muted/30 px-4 py-16">
+        <AnimatedContainer className="text-center">
+          <p className="font-heading mb-2 text-8xl font-bold text-primary/20 md:text-9xl">404</p>
+          <Button className="rounded-full px-8" asChild>
+            <Link href="/">Return Home</Link>
+          </Button>
+        </AnimatedContainer>
+      </div>
+    </>
   );
 }

@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${plusJakarta.variable} ${notoNaskh.variable} scroll-smooth`}>
       <body className="min-h-screen bg-background text-foreground font-sans antialiased flex flex-col">
         <Navbar />
-        <main className="flex-1 flex flex-col pt-20 pb-20 md:pb-0">
+        <main className="flex flex-1 flex-col pb-20 md:pb-0">
           {children}
         </main>
         <Footer />

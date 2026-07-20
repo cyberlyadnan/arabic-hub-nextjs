@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AnimatedContainer } from "@/components/shared/animated-container";
 import { Section } from "@/components/shared/section";
+import { PageHero } from "@/components/shared/page-hero";
 import { Award, BookOpen, GraduationCap, Users } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -11,20 +12,21 @@ export const metadata: Metadata = {
 export default function TeacherPage() {
   return (
     <>
-      <Section background="muted" className="pt-32 pb-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <AnimatedContainer>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-              Meet Your Teacher
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Learn from passionate and qualified instructors dedicated to your success.
-            </p>
-          </AnimatedContainer>
-        </div>
-      </Section>
+      <PageHero
+        title="Meet Your Teacher"
+        description="Learn from passionate and qualified instructors dedicated to your success."
+        eyebrow="Mentorship"
+        icon="graduation"
+        arabicText="معلم"
+        breadcrumbs={[{ label: "Teacher" }]}
+        stats={[
+          { value: "10+", label: "Years Exp." },
+          { value: "1,000+", label: "Students" },
+          { value: "Ijazah", label: "Tajweed" },
+        ]}
+      />
 
-      <Section>
+      <Section background="teal" className="pt-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <AnimatedContainer direction="right" className="w-full md:w-1/2">

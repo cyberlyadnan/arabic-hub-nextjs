@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AnimatedContainer } from "@/components/shared/animated-container";
 import { Section } from "@/components/shared/section";
+import { PageHero } from "@/components/shared/page-hero";
 import {
   Accordion,
   AccordionContent,
@@ -45,20 +46,16 @@ const faqs = [
 export default function FAQPage() {
   return (
     <>
-      <Section background="muted" className="pt-32 pb-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <AnimatedContainer>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Find answers to common questions about our Arabic courses. If you have any other queries, feel free to contact us.
-            </p>
-          </AnimatedContainer>
-        </div>
-      </Section>
+      <PageHero
+        title="Frequently Asked Questions"
+        description="Find answers to common questions about our Arabic courses, timings, and learning process."
+        eyebrow="Help Center"
+        icon="help"
+        arabicText="سؤال"
+        breadcrumbs={[{ label: "FAQ" }]}
+      />
 
-      <Section>
+      <Section background="sky" className="pt-8">
         <div className="max-w-3xl mx-auto">
           <AnimatedContainer delay={0.2} direction="up">
             <Accordion className="w-full">

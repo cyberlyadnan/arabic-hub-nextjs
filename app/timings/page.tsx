@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AnimatedContainer } from "@/components/shared/animated-container";
 import { Section } from "@/components/shared/section";
+import { PageHero } from "@/components/shared/page-hero";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MonitorPlay, Sun, Moon, Coffee } from "lucide-react";
 
@@ -47,20 +48,21 @@ const batches = [
 export default function TimingsPage() {
   return (
     <>
-      <Section background="muted" className="pt-32 pb-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <AnimatedContainer>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-              Batch Timings
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              We offer flexible timings to accommodate your busy schedule. All classes are conducted live online via Google Meet.
-            </p>
-          </AnimatedContainer>
-        </div>
-      </Section>
+      <PageHero
+        title="Batch Timings"
+        description="Flexible morning, evening, and weekend batches — all classes conducted live online via Google Meet."
+        eyebrow="Schedule"
+        icon="clock"
+        arabicText="وقت"
+        breadcrumbs={[{ label: "Timings" }]}
+        stats={[
+          { value: "3", label: "Batch Options" },
+          { value: "Live", label: "Online" },
+          { value: "IST", label: "Timezone" },
+        ]}
+      />
 
-      <Section>
+      <Section background="sage" className="pt-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {batches.map((batch, i) => (

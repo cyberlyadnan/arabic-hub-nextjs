@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AnimatedContainer } from "@/components/shared/animated-container";
 import { Section } from "@/components/shared/section";
+import { PageHero } from "@/components/shared/page-hero";
 import { Button } from "@/components/ui/button";
 import { BookOpen, GraduationCap, LayoutList, MessageSquare, Mic, ScrollText } from "lucide-react";
 import Link from "next/link";
@@ -82,20 +83,21 @@ const courses = [
 export default function CoursesPage() {
   return (
     <>
-      <Section background="muted" className="pt-32 pb-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <AnimatedContainer>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-              Our Courses
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Carefully structured programs designed to take you from absolute beginner to confident speaker and reader.
-            </p>
-          </AnimatedContainer>
-        </div>
-      </Section>
+      <PageHero
+        title="Our Courses"
+        description="Carefully structured programs designed to take you from absolute beginner to confident speaker and reader."
+        eyebrow="Curriculum"
+        icon="book"
+        arabicText="دورات"
+        breadcrumbs={[{ label: "Courses" }]}
+        stats={[
+          { value: "6", label: "Programs" },
+          { value: "Live", label: "Online Mode" },
+          { value: "All", label: "Age Groups" },
+        ]}
+      />
 
-      <Section>
+      <Section background="sand" className="pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {courses.map((course, i) => (
             <AnimatedContainer key={course.id} delay={0.1 * i} direction="up">

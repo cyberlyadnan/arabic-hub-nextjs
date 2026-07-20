@@ -76,6 +76,7 @@
   --chart-4: #64748B;
   --chart-5: #0F172A;
   --radius: 0.75rem;
+  --nav-offset: 5.75rem; /* mobile: navbar + breathing room */
   --sidebar: #FAFAF8;
   --sidebar-foreground: #0F172A;
   --sidebar-primary: #0F766E;
@@ -145,6 +146,16 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-muted-foreground/50;
+  }
+}
+
+@utility pt-nav {
+  padding-top: var(--nav-offset);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-offset: 6.75rem;
   }
 }
 

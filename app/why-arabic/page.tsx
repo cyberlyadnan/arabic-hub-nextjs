@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AnimatedContainer } from "@/components/shared/animated-container";
 import { Section } from "@/components/shared/section";
+import { PageHero } from "@/components/shared/page-hero";
 import { BookOpen, Star, Globe2, Briefcase, GraduationCap, Heart } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -56,20 +57,16 @@ const benefits = [
 export default function WhyArabicPage() {
   return (
     <>
-      <Section background="muted" className="pt-32 pb-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <AnimatedContainer>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-              Why Learn Arabic?
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Arabic is more than just a language; it is a key that unlocks spiritual depth, historical wisdom, and global opportunities.
-            </p>
-          </AnimatedContainer>
-        </div>
-      </Section>
+      <PageHero
+        title="Why Learn Arabic?"
+        description="Arabic is more than just a language — it unlocks spiritual depth, historical wisdom, and global opportunities."
+        eyebrow="Benefits"
+        icon="globe"
+        arabicText="عربي"
+        breadcrumbs={[{ label: "Why Arabic" }]}
+      />
 
-      <Section>
+      <Section background="teal" className="pt-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, i) => (

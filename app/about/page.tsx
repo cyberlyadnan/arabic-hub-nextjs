@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AnimatedContainer } from "@/components/shared/animated-container";
 import { Section } from "@/components/shared/section";
+import { PageHero } from "@/components/shared/page-hero";
 import { Heart, Target, Lightbulb, Users } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -11,20 +12,21 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Section background="muted" className="pt-32 lg:pt-40 pb-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedContainer>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-              Our Story
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Arabic Hub was founded with a single, clear purpose: to make learning Arabic accessible, enjoyable, and deeply meaningful for everyone. We believe that understanding Arabic is the key to unlocking a world of historical wisdom, spiritual connection, and global communication.
-            </p>
-          </AnimatedContainer>
-        </div>
-      </Section>
+      <PageHero
+        title="Our Story"
+        description="Arabic Hub was founded with a single, clear purpose: to make learning Arabic accessible, enjoyable, and deeply meaningful for everyone."
+        eyebrow="About Arabic Hub"
+        icon="heart"
+        arabicText="قصة"
+        breadcrumbs={[{ label: "About" }]}
+        stats={[
+          { value: "10+", label: "Years Experience" },
+          { value: "1,000+", label: "Students Taught" },
+          { value: "6", label: "Course Programs" },
+        ]}
+      />
 
-      <Section>
+      <Section background="sky" className="pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto items-center">
           <AnimatedContainer direction="right">
             <div className="aspect-[4/3] bg-primary/10 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden border border-border/50">
@@ -52,7 +54,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section background="muted">
+      <Section background="teal">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <AnimatedContainer>
             <h2 className="font-heading text-4xl font-bold mb-4">Our Teaching Philosophy</h2>
