@@ -25,6 +25,10 @@ const notoNaskh = Noto_Naskh_Arabic({
 export const metadata: Metadata = {
   title: "Arabic Hub - Premium Online Arabic Learning Platform",
   description: "Learn Arabic with Confidence. Master the Language of the Quran with live online classes.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

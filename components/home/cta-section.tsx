@@ -35,8 +35,7 @@ export function CtaSection() {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="h-14 w-full rounded-full border-primary-foreground/30 px-8 text-lg text-primary-foreground hover:bg-primary-foreground/10 sm:w-auto"
+              className="h-14 w-full rounded-full border-2 border-white/60 bg-transparent px-8 text-lg font-semibold text-white shadow-none hover:bg-white/15 hover:text-white sm:w-auto"
               asChild
             >
               <Link href="/contact">Contact Support</Link>

@@ -9,7 +9,6 @@ import {
   Award,
   BookOpen,
   CheckCircle,
-  ChevronDown,
   GraduationCap,
   Play,
   Sparkles,
@@ -27,12 +26,6 @@ const FLOATING_LETTERS = [
 ];
 
 const TYPING_WORDS = ["Confidence", "Clarity", "Purpose", "Joy"];
-
-const HERO_STATS = [
-  { value: "1,000+", label: "Students" },
-  { value: "4.9★", label: "Rating" },
-  { value: "25+", label: "Batches" },
-];
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -136,7 +129,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="mb-6 font-heading text-5xl font-bold leading-[1.08] tracking-tight text-foreground md:text-6xl xl:text-7xl"
+              className="mb-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-5xl xl:text-6xl"
             >
               Learn Arabic with{" "}
               <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text italic text-transparent">
@@ -338,34 +331,7 @@ export function HeroSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* Stats bar — full width */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75, duration: 0.6 }}
-          className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-4 rounded-2xl border border-white/60 bg-white/70 p-4 shadow-lg backdrop-blur-md md:mt-16 md:gap-6 md:p-6 lg:max-w-4xl"
-        >
-          {HERO_STATS.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-heading text-2xl font-bold text-primary md:text-3xl">{stat.value}</p>
-              <p className="text-xs font-medium text-muted-foreground md:text-sm">{stat.label}</p>
-            </div>
-          ))}
-        </motion.div>
       </div>
-
-      <motion.a
-        href="#why-arabic"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1 text-muted-foreground transition-colors hover:text-primary"
-        aria-label="Scroll to explore"
-      >
-        <span className="text-xs font-medium tracking-wider uppercase">Explore</span>
-        <ChevronDown className="h-5 w-5 animate-scroll-hint" />
-      </motion.a>
     </section>
   );
 }

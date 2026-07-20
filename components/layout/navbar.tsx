@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { BookOpen, Menu, MessageCircle } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { SiteLogo } from "@/components/shared/site-logo";
 import { usePathname } from "next/navigation";
 import { GOOGLE_FORM_URL, WHATSAPP_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -50,29 +51,7 @@ export function Navbar() {
         )}
       >
         {/* Logo */}
-        <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary shadow-md shadow-primary/25 transition-transform group-hover:scale-105 md:h-10 md:w-10">
-            <BookOpen className="h-4.5 w-4.5 text-white md:h-5 md:w-5" />
-          </span>
-          <div className="flex flex-col leading-none">
-            <span
-              className={cn(
-                "font-heading text-lg font-bold tracking-tight transition-colors md:text-xl",
-                isSolid ? "text-primary" : "text-foreground"
-              )}
-            >
-              Arabic Hub
-            </span>
-            <span
-              className={cn(
-                "hidden text-[10px] font-medium uppercase tracking-widest sm:block",
-                isSolid ? "text-muted-foreground" : "text-foreground/60"
-              )}
-            >
-              Learn Arabic
-            </span>
-          </div>
-        </Link>
+        <SiteLogo priority height={44} />
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-0.5 xl:flex">
@@ -174,12 +153,7 @@ export function Navbar() {
               className="flex w-[min(100vw-2rem,360px)] flex-col border-l-0 p-0 shadow-2xl"
             >
               <div className="border-b border-border/50 bg-primary/5 px-6 py-5">
-                <Link href="/" className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                    <BookOpen className="h-5 w-5 text-white" />
-                  </span>
-                  <span className="font-heading text-xl font-bold text-primary">Arabic Hub</span>
-                </Link>
+                <SiteLogo size="md" height={44} />
               </div>
               <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-4">
                 {links.map((link) => {

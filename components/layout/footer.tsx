@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { BookOpen, Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SiteLogo } from "@/components/shared/site-logo";
 import { GOOGLE_FORM_URL, WHATSAPP_URL } from "@/lib/constants";
 
 const FacebookIcon = ({ className }: { className?: string }) => (
@@ -108,14 +109,7 @@ export function Footer() {
         <div className="mb-14 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
           {/* Brand */}
           <div className="flex flex-col gap-5 lg:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-3 group">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15 transition-colors group-hover:bg-white/15">
-                <BookOpen className="h-5 w-5 text-gold" />
-              </span>
-              <span className="font-heading text-2xl font-bold tracking-tight text-white">
-                Arabic Hub
-              </span>
-            </Link>
+            <SiteLogo size="lg" height={56} variant="light" />
             <p className="max-w-sm text-sm leading-relaxed text-white/65">
               Premium online Arabic learning. Master the language of the Quran with live classes,
               expert teachers, and a structured path from alphabet to conversation.
